@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+
+  <body>
+    <div class="container">
+      <%- include('./partials/nav.ejs') %>
+      <section>
+        <div class="tweet">
+          <div class="head">
+            <div class="img__profile"></div>
+            <div class="user__profile">
+              <h2>Ullas Kunder</h2>
+              <span>Deleoper, @ullaskunder3</span>
+            </div>
+          </div>
+        </div>
+        <div class="post__container">
+          <% if(blogs.length> 0){ %>
+             <% blogs.forEach(blog=> { %>
+          <div class="card">
+            <a href="/blogs/<%= blog._id %> " class="single">
+              <h1 class="title"><%= blog.title %></h1>
+              <p class="snippet"><%= blog.snippet %></p>
+            </a>
+            <div class="card__icons">
+              <div class="comment">
+                <i class="far fa-comment-dots"></i>
+              </div>
+              <div class="share">
+                <i class="fas fa-retweet"></i>
+              </div>
+              <div class="like">
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+          </div>
+          <% }) %> 
+          <% }else{ %>
+          <h1>No Blogs yett</h1>
+          <% } %>
+        </div>
+      </section>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+    <body>
+        <div class="container">
+            <%- include('./partials/nav.ejs') %> 
+        </div>
+        <%- include('./partials/footer.ejs') %> 
+    </body>
+    </html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline-style: none;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .container {
+            /* height: 100vh; */
+            /* background-color: hsl(226, 10%, 90%); */
+            /* border: 2px solid black; */
+            /* border-left: 2px solid black; */
+            /* border-right: 2px solid black; */
+
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 0;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* padding: 1rem 1.5rem; */
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            margin-left: 5rem;
+        }
+
+        .nav-menu li a {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: black;
+        }
+
+        .nav-menu li a.follow {
+            color: white;
+        }
+
+        .logo {
+            color: #555;
+            font-size: 2.1rem;
+            font-weight: 800;
+        }
+
+        .ham {
+            display: none;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+        }
+
+        .search ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search ul li {
+            margin-left: 5rem;
+        }
+
+        .search ul li a {
+            color: black;
+            font-size: 1.6rem;
+        }
+
+        .body-container {
+            margin-top: 4rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .profile {
+            /* background-color: aqua; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .profile img {
+            top: 0;
+            width: 150px;
+            /* border: 2px solid black; */
+        }
+
+        .profile span {
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .info a {
+            display: block;
+        }
+
+        .follow {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            border: none;
+            color: white;
+            background-color: black;
+            margin: 20px 0;
+        }
+
+        .blog-content span {
+            color: #555;
+        }
+
+        .blog-content h1 {
+            font-size: 2.25rem;
+            padding-top: 1rem;
+        }
+
+        .blog-content p {
+            font-size: 1.9rem;
+            padding: 1rem 0;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            max-width: 40vw;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 0;
+            font-size: 1.8rem;
+        }
+
+        .like a,
+        .share a {
+            padding-right: 1.6rem;
+        }
+
+        i {
+            color: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="user-info">
+                <a class="logo" href="#">@ullaskunder3</a>
+                <ul class="nav-menu">
+                    <li><a href="#">followers</a></li>
+                    <li><a class="follow" href="/blogs/create">Create Blog</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <ul>
+                    <!-- <li><a href="/about">About</a></li>
+                    <li><a href="/blogs/create">Create blog</a></li> -->
+
+                    <li><a href="/">...</a></li>
+                    <li><a href="#">search</a></li>
+                    <li><a href="#">connect</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="body-container">
+            <div class="col profile">
+                <img src="data:image/png;base64,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"
+                    alt="">
+                <span>Ullas Kunder</span>
+                <p class="info">
+                    Github
+                    <a href="">https://github.com/ullaskunder3</a>
+                    Twitter
+                    <a href="">https://twitter.com/mrAtlasss</a>
+                </p>
+                <button class="follow">Edit</button>
+            </div>
+            <div class="col blog-content">
+                <div class="blog-overview">
+                    <span>May 2050</span>
+                    <h1>Master Web Designer.</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia itaque reprehenderit, magni
+                        sapiente cupiditate voluptatum officia voluptate modi fugit quasi?
+                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, delectus!</p>
+                    <span>Read More</span>
+                </div>
+                <div class="icon">
+                    <div class="like">
+                        <a href=""><i class="far fa-heart"></i></a>
+                        <a href=""><i class="far fa-comment"></i></a>
+                    </div>
+                    <div class="share">
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                        <a href=""><i class="fas fa-share"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
