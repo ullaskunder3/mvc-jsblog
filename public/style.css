@@ -50,7 +50,7 @@ table {
 }
 
 :root {
-    --ashDark: #3B4655;
+    --ashDark: #3B4858;
 }
 
 body{
@@ -82,10 +82,12 @@ body{
     margin: auto;
 }
 .card{
-    border: 1px solid black;
+    padding: 1rem 0;
     border-radius: 1rem;
     margin-bottom: 1rem;
     border-left: 6px solid tomato;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
 }
 .card a{
     display: block;
@@ -112,11 +114,15 @@ body{
     align-items: center;
     justify-content: space-evenly;
 
-    padding: 5px 0;
+    padding: .62rem 0;
     color: #21272F;
-    font-weight: bolder;
 }
-
+.card__icons div{
+    font-size: 1.37rem;
+}
+.card__icons .like{
+    color: red;
+}
 .tweet {
     margin: 2rem 0;
 }
@@ -145,12 +151,12 @@ body{
 footer{
     position: fixed;
     bottom: 0;
-    height: 50px;
+    height: 4.5rem;
     width: 100%;
     
-    color: #fff;
+    color: #f3f2f2a9;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem 0;
 
     background:var(--ashDark);
 }
@@ -162,14 +168,17 @@ footer{
 }
 .footer__social-links ul{
     display: flex;
-    margin: .4rem 0;
+    margin: .2rem 0;
 }
 .footer__social-links ul li{
-    padding: 0 .6rem;
+    padding: 0 .5rem;
 }
 .footer__social-links ul li a{
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #fff;
+}
+.footer__social-links span{
+    font-size: .72rem;
 }
 .create-blog form{
     max-width: 400px;
